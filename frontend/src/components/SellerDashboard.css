@@ -1,0 +1,246 @@
+/* ==========================
+   Seller Dashboard Layout
+========================== */
+.seller-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6f9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #1e293b;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #facc15;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+.sidebar li:hover {
+  background: #334155;
+}
+.sidebar li.active {
+  background: #facc15;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Page Layout */
+.page {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  animation: fadeIn 0.5s ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-size: 1.6rem;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.search-bar {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.add-btn {
+  background: #16a34a;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.add-btn:hover {
+  background: #15803d;
+}
+
+/* Product Cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.product-card:hover {
+  transform: scale(1.03);
+}
+.product-image {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.product-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.product-info h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.brand {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+.price {
+  font-weight: bold;
+  color: #16a34a;
+}
+.original-price {
+  text-decoration: line-through;
+  margin-left: 8px;
+  color: #ef4444;
+}
+.stock {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-top: 5px;
+}
+
+/* ==========================
+   Modal Styling
+========================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 650px;
+  max-width: 90%;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  animation: scaleIn 0.3s ease;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Product Details Modal */
+.product-details-modal {
+  display: flex;
+  gap: 20px;
+}
+.product-image-large img {
+  width: 220px;
+  border-radius: 10px;
+}
+.product-info .description {
+  margin: 12px 0;
+  font-size: 0.95rem;
+  color: #334155;
+}
+.product-meta {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+/* Email Draft Modal */
+.email-draft textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  resize: vertical;
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.cancel-btn, .submit-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cancel-btn {
+  background: #e2e8f0;
+}
+.cancel-btn:hover {
+  background: #cbd5e1;
+}
+.submit-btn {
+  background: #3b82f6;
+  color: #fff;
+}
+.submit-btn:hover {
+  background: #2563eb;
+}
+
+/* ==========================
+   Animations
+========================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
